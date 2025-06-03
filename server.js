@@ -8,10 +8,15 @@ const cors = require('cors');
 const app = express();
 
 // Middleware
+// app.use(cors({
+//   origin: 'http://localhost:3000', // or '*' for all origins
+//   credentials: true
+// }));
 app.use(cors({
-  origin: 'http://localhost:3000', // or '*' for all origins
+  origin: ['http://localhost:3000', 'https://swappro-lilac.vercel.app/'], // or wherever it's deployed
   credentials: true
 }));
+
 app.use(bodyParser.json());
 
 // MongoDB Atlas Connection
